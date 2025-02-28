@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build:css": "tailwindcss -i ./styles/tailwind.css -o ./public/output.css",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
