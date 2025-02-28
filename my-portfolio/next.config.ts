@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  distDir: "out",
+  reactStrictMode: true,
   images: {
-    unoptimized: true, // GitHub Pages støtter ikke Next.js Image Optimization
+    unoptimized: true, // Hjelper hvis du har bildeproblemer på Vercel
   },
 };
 
