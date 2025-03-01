@@ -2,21 +2,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode styling */
+.dark {
+  --background: #0a0a0a !important;
+  --foreground: #ededed !important;
+}
+
+.dark body {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+}
+
+/* Light mode styling (default) */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --backgroundLight: #fafafa;
+  --backgroundDark: #000000;
+  --textLight: #1a1a1a;
+  --textDark: #eaeaea;
+  --cardLight: #ffffff;
+  --cardDark: #1c1c1e;
+  --borderLight: #dddddd;
+  --borderDark: #333333;
 }
 
 body {
