@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class", // Må være "class" for å støtte lokal lagring av tema
-  content: ["./src/**/*.{js,ts,jsx,tsx}"], // Sikrer at Tailwind brukes på alle relevante filer
+  darkMode: "class",
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
