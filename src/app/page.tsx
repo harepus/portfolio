@@ -1,130 +1,145 @@
 "use client";
 
-import { Inter, Playfair_Display } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500"] });
-const playfair = Playfair_Display({ subsets: ["latin"], weight: ["500"] });
+import { useState, useEffect } from "react";
 
 export default function Portfolio() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "1")
+        window.location.href = "mailto:your.email@example.com";
+      if (event.key === "2")
+        window.location.href = "https://linkedin.com/in/yourprofile";
+      if (event.key === "3")
+        window.location.href = "https://github.com/yourprofile";
+      if (event.key === "4") window.location.href = "/resume.pdf";
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
-    <div
-      className={`bg-white text-black min-h-screen flex flex-col items-center justify-center px-8 ${inter.className}`}
-    >
-      <section className="max-w-2xl mx-auto text-left leading-[1.45]">
-        {/* Name & Pronunciation with Business Card Styling */}
-        <h1
-          className={`text-[26px] tracking-wide ${playfair.className} text-gray-900 font-medium`}
-        >
-          Sebastian Hareide
-        </h1>
-        <p className="text-gray-500 text-[14px] italic mt-1">
-          [sɛbɑˈstɪɑn ˈhɑːrəɪdə]
-        </p>
+    <div className="min-h-screen flex flex-col justify-center items-center text-center px-6 text-gray-800 font-serif">
+      {/* Navn + fonetisk uttale */}
+      <h1 className="text-lg font-semibold tracking-tight text-gray-700 mb-1">
+        Sebastian Hareide
+      </h1>
+      <p className="text-sm italic text-gray-500">[sebaˈstian ˈhɑːræɪdə]</p>
 
-        {/* Bio */}
-        <p className="mt-4 text-[15px] text-gray-600">
-          Mathematics & Informatics student interested in quantitative research,
-          financial modeling, and algorithmic trading. Passionate about solving
-          complex problems through data and computation.
-        </p>
-        <p className="mt-2 text-[14px] text-gray-500">
-          Currently working on independent research projects, developing
-          statistical arbitrage models, and exploring high-frequency trading
-          strategies.
-        </p>
-      </section>
-
-      {/* Subtle Divider */}
-      <div className="border-t border-gray-200 my-10 w-full max-w-2xl"></div>
-
-      {/* Experience Section */}
-      <section className="max-w-2xl mx-auto text-left">
-        <h2 className="text-[13px] font-medium text-gray-700 uppercase tracking-wider">
-          Experience
-        </h2>
-        <ul className="mt-3 text-gray-700 space-y-1 text-[14px]">
-          <li className="flex justify-between">
-            <span>Intern @ Financial Research Lab</span>
-            <span className="text-gray-500 text-[13px]">2024</span>
-          </li>
-          <li className="flex justify-between">
-            <span>Software Engineer Intern @ Start-up</span>
-            <span className="text-gray-500 text-[13px]">2023</span>
-          </li>
-          <li className="flex justify-between">
-            <span>Research Assistant @ University</span>
-            <span className="text-gray-500 text-[13px]">2022</span>
-          </li>
-        </ul>
-      </section>
-
-      {/* Projects Section */}
-      <section className="max-w-2xl mx-auto text-left mt-8">
-        <h2 className="text-[13px] font-medium text-gray-700 uppercase tracking-wider">
-          Projects
-        </h2>
-        <ul className="mt-3 text-gray-700 space-y-1 text-[14px]">
-          <li className="flex justify-between">
-            <span>Statistical Arbitrage Model</span>
-            <span className="text-gray-500 text-[13px]">Ongoing</span>
-          </li>
-          <li className="flex justify-between">
-            <span>High-Frequency Trading Simulation</span>
-            <span className="text-gray-500 text-[13px]">2023</span>
-          </li>
-          <li className="flex justify-between">
-            <span>Mathematical Modeling of Market Microstructure</span>
-            <span className="text-gray-500 text-[13px]">2022</span>
-          </li>
-        </ul>
-      </section>
-
-      {/* Subtle Divider */}
-      <div className="border-t border-gray-200 my-10 w-full max-w-2xl"></div>
-
-      {/* Contact Section */}
-      <section className="max-w-2xl mx-auto text-left">
-        <h2 className="text-[13px] font-medium text-gray-700 uppercase tracking-wider">
-          Contact
-        </h2>
-        <ul className="mt-3 text-gray-700 space-y-1 text-[14px]">
-          <li>
-            <a
-              href="mailto:your.email@example.com"
-              className="hover:underline text-gray-600 transition-opacity hover:opacity-70"
-            >
-              ¹ Email
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://linkedin.com/in/yourprofile"
-              className="hover:underline text-gray-600 transition-opacity hover:opacity-70"
-            >
-              ² LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/yourgithub"
-              className="hover:underline text-gray-600 transition-opacity hover:opacity-70"
-            >
-              ³ GitHub
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      {/* Resume Button */}
-      <div className="mt-6">
-        <a
-          href="/resume.pdf"
-          download
-          className="text-[14px] font-medium text-gray-700 hover:underline hover:opacity-70 transition-opacity"
-        >
-          Download Resume →
-        </a>
+      {/* Beskrivelse - Justert margin for å redusere tomrom */}
+      <div className="w-full max-w-md text-left text-sm text-gray-600 leading-relaxed mt-1 mb-3">
+        Mathematics & Informatics student passionate about quantitative
+        research, financial modeling, and algorithmic trading. Currently
+        developing statistical arbitrage models and high-frequency trading
+        strategies.
       </div>
+
+      {/* Container for Experience, Projects, Contact - Midtjustert */}
+      <div className="w-full max-w-md text-left">
+        {/* Erfaring */}
+        <hr className="border-gray-300" />
+        <div className="flex justify-between mt-3">
+          <h2 className="text-xs font-semibold tracking-wide text-gray-500 uppercase">
+            EXPERIENCE
+          </h2>
+          <span className="text-xs text-gray-400">[1]</span>
+        </div>
+        <div className="mt-1 text-sm text-gray-700 space-y-1">
+          <p className="flex justify-between">
+            Intern @ Financial Research Lab{" "}
+            <span className="text-gray-400">2024</span>
+          </p>
+          <p className="flex justify-between">
+            Software Engineer Intern @ Start-up{" "}
+            <span className="text-gray-400">2023</span>
+          </p>
+          <p className="flex justify-between">
+            Research Assistant @ University{" "}
+            <span className="text-gray-400">2022</span>
+          </p>
+        </div>
+
+        {/* Prosjekter */}
+        <div className="mt-5">
+          <div className="flex justify-between">
+            <h2 className="text-xs font-semibold tracking-wide text-gray-500 uppercase">
+              PROJECTS
+            </h2>
+            <span className="text-xs text-gray-400">[2]</span>
+          </div>
+          <div className="mt-1 text-sm text-gray-700 space-y-1">
+            <p className="flex items-center">
+              <span className="inline-block w-2 h-2 bg-blue-900 mr-2"></span>
+              Statistical Arbitrage Model
+              <span className="ml-auto text-gray-400">Ongoing</span>
+            </p>
+            <p className="flex items-center">
+              <span className="inline-block w-2 h-2 bg-red-900 mr-2"></span>
+              High-Frequency Trading Simulation
+              <span className="ml-auto text-gray-400">2023</span>
+            </p>
+            <p className="flex items-center">
+              <span className="inline-block w-2 h-2 bg-green-900 mr-2"></span>
+              Mathematical Modeling of Market Microstructure
+              <span className="ml-auto text-gray-400">2022</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Kontakt */}
+        <div className="mt-5 text-center">
+          <div className="flex justify-center">
+            <h2 className="text-xs font-semibold tracking-wide text-gray-500 uppercase">
+              CONTACT
+            </h2>
+            <span className="text-xs text-gray-400 ml-2">[3]</span>
+          </div>
+          <div className="mt-1 text-sm text-gray-700 space-y-1">
+            <p>
+              <span className="text-gray-400">[1]</span>{" "}
+              <a
+                href="mailto:your.email@example.com"
+                className="hover:underline"
+              >
+                Email
+              </a>
+            </p>
+            <p>
+              <span className="text-gray-400">[2]</span>{" "}
+              <a
+                href="https://linkedin.com/in/yourprofile"
+                className="hover:underline"
+              >
+                LinkedIn
+              </a>
+            </p>
+            <p>
+              <span className="text-gray-400">[3]</span>{" "}
+              <a
+                href="https://github.com/yourprofile"
+                className="hover:underline"
+              >
+                GitHub
+              </a>
+            </p>
+            <p>
+              <span className="text-gray-400">[4]</span>{" "}
+              <a href="/resume.pdf" className="hover:underline">
+                Resume
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <p className="mt-10 text-xs text-gray-500">New portfolio coming soon.</p>
     </div>
   );
 }
