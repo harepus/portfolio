@@ -25,10 +25,22 @@
   --foreground: #171717;
 }
 
+.experience-font {
+  font-family: VT323;
+  font-weight: 500; /* Adjust the weight as needed */
+  font-size: 0.85rem;
+}
+
+.contact-font {
+  font-family: VT323;
+  font-weight: 500; /* Adjust the weight as needed */
+  font-size: 0.85rem;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: judson, serif;
+  font-family: ibm plex serif;
   margin: 0;
   padding: 0;
   width: 100%;

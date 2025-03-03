@@ -11,9 +11,10 @@ const Portfolio: NextPage = () => {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "1")
-        window.location.href = "mailto:your.email@example.com";
+        window.location.href = "mailto:sebastian.s.hareide@gmail.com";
       if (event.key === "2")
-        window.location.href = "https://linkedin.com/in/yourprofile";
+        window.location.href =
+          "https://www.linkedin.com/in/sebastian-hareide-569722208/";
       if (event.key === "3")
         window.location.href = "https://github.com/yourprofile";
       if (event.key === "4") window.location.href = "/resume.pdf";
@@ -39,10 +40,10 @@ const Portfolio: NextPage = () => {
             <div className="mb-12">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h1 className="text-xl font-normal text-gray-800">
+                  <h1 className="text-xl font-normal text-gray-1000">
                     Sebastian Hareide
                   </h1>
-                  <p className="text-sm italic text-gray-500">
+                  <p className="text-sm italic text-gray-700">
                     [sɪˈbæstiːən ˈhɑːræɪdə]
                   </p>
                 </div>
@@ -67,8 +68,10 @@ const Portfolio: NextPage = () => {
               <div className="flex-1 md:pr-8 mb-8 md:mb-0">
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex items-center">
-                    <span className="text-gray-800 mr-2">■</span>
-                    <span className="text-gray-800">[EXPERIENCE]</span>
+                    <span className="text-gray-300 mr-2">■</span>
+                    <span className="text-gray-800 experience-font">
+                      [EXPERIENCE]
+                    </span>
                   </div>
                   <div className="text-gray-400">[2]</div>
                 </div>
@@ -113,7 +116,9 @@ const Portfolio: NextPage = () => {
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex items-center">
                     <span className="text-gray-800 mr-2">■</span>
-                    <span className="text-gray-800">[CONTACT]</span>
+                    <span className="text-gray-800 contact-font">
+                      [CONTACT]
+                    </span>
                   </div>
                   <div className="text-gray-400">[3]</div>
                 </div>
@@ -123,7 +128,7 @@ const Portfolio: NextPage = () => {
                     <div className="flex items-center">
                       <span className="text-gray-400 mr-2">¹</span>
                       <a
-                        href="mailto:your.email@example.com"
+                        href="mailto:sebastian.s.hareide@gmail.com"
                         className="hover:underline"
                       >
                         Email
@@ -136,7 +141,7 @@ const Portfolio: NextPage = () => {
                     <div className="flex items-center">
                       <span className="text-gray-400 mr-2">²</span>
                       <a
-                        href="https://linkedin.com/in/yourprofile"
+                        href="https://www.linkedin.com/in/sebastian-hareide-569722208/"
                         className="hover:underline"
                       >
                         LinkedIn
@@ -168,6 +173,9 @@ const Portfolio: NextPage = () => {
                     <span className="text-gray-400">↗</span>
                   </div>
                 </div>
+                <p className="text-xs text-gray-400 mt-4">
+                  Navigate with numbers [1-4]
+                </p>
               </div>
             </div>
           </div>
