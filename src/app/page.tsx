@@ -1,8 +1,9 @@
 "use client";
+import type { NextPage } from "next";
+import Head from "next/head";
+import { useEffect, useState } from "react";
 
-import { useState, useEffect } from "react";
-
-export default function Portfolio() {
+const Portfolio: NextPage = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -25,107 +26,155 @@ export default function Portfolio() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-left text-gray-800 font-serif">
-      <div className="w-full max-w-2xl px-6">
-        <h1 className="text-lg tracking-tight text-gray-700">
-          Sebastian Hareide
-        </h1>
-        <p className="text-sm italic text-gray-500">[sɪˈbæstiːən ˈhɑːræɪdə]</p>
+    <>
+      <Head>
+        <title>Sebastian Hareide</title>
+        <meta name="description" content="Sebastian Hareide" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <p className="text-sm text-gray-600 leading-relaxed max-w-lg mt-2 mb-6">
-          Mathematics & Informatics student passionate about biotech, IT
-          consulting, and software engineering.
-        </p>
+      <div className="flex items-center justify-center min-h-screen">
+        <main className="py-12 flex flex-col items-start w-full max-w-2xl">
+          <div className="w-full">
+            <div className="mb-12">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h1 className="text-xl font-normal text-gray-800">
+                    Sebastian Hareide
+                  </h1>
+                  <p className="text-sm italic text-gray-500">
+                    [sɪˈbæstiːən ˈhɑːræɪdə]
+                  </p>
+                </div>
+                <span className="text-gray-800">[1]</span>
+              </div>
+              <div className="mb-8">
+                <p className="mb-2 text-gray-600">
+                  Mathematics & Informatics student passionate about biotech, IT
+                  consulting, and software engineering.
+                </p>
+                <p className="text-gray-600">
+                  Currently studying Mathematics at UiO. Finished a bachelor's
+                  in Informatics.
+                </p>
+              </div>
+            </div>
 
-        <hr className="border-gray-200 w-full mb-6" />
+            <hr className="my-6 border-gray-300" />
 
-        <div className="grid grid-cols-[1fr_auto_1fr] w-full gap-8 text-sm items-start">
-          {/* Experience & Projects */}
-          <div>
-            <h2 className="text-xs tracking-wide text-gray-500 uppercase mb-4">
-              EXPERIENCE & PROJECTS [1]
-            </h2>
-            <div className="space-y-2">
-              <p className="flex items-center">
-                <span className="inline-block w-2 h-2 bg-[#A7C7E7] mr-2"></span>
-                Instagram Marketer @ SiO
-                <span className="ml-auto text-gray-400">2022</span>
-              </p>
-              <p className="flex items-center">
-                <span className="inline-block w-2 h-2 bg-[#FFADAD] mr-2"></span>
-                Student Ambassador & Recruiter @ UiO
-                <span className="ml-auto text-gray-400">2021</span>
-              </p>
-              <p className="flex items-center">
-                <span className="inline-block w-2 h-2 bg-[#A0E7A0] mr-2"></span>
-                Teacher in Programming (High School)
-                <span className="ml-auto text-gray-400">2020</span>
-              </p>
-              <p className="flex items-center">
-                <span className="inline-block w-2 h-2 bg-[#F9E79F] mr-2"></span>
-                Vannplaning App – Kotlin (IN2000, UiO)
-                <span className="ml-auto text-gray-400">2021</span>
-              </p>
-              <p className="text-gray-600 text-xs ml-5">
-                Built a weather-based hydroplaning alert system in Kotlin.
-              </p>
+            <div className="flex flex-col md:flex-row justify-between mb-16">
+              {/* EXPERIENCE Section */}
+              <div className="flex-1 md:pr-8 mb-8 md:mb-0">
+                <div className="flex items-start justify-between mb-2">
+                  <div className="flex items-center">
+                    <span className="text-gray-800 mr-2">■</span>
+                    <span className="text-gray-800">[EXPERIENCE]</span>
+                  </div>
+                  <div className="text-gray-400">[2]</div>
+                </div>
+
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <span className="text-red-500 mr-2">■</span>
+                      <span>Instagram Marketer @ SiO</span>
+                    </div>
+                    <span className="text-gray-400">Ongoing</span>
+                  </div>
+
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <span className="text-blue-500 mr-2">■</span>
+                      <span>Student Ambassador @ UiO</span>
+                    </div>
+                    <span className="text-gray-400">Ongoing</span>
+                  </div>
+
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <span className="text-gray-800 mr-2">■</span>
+                      <span>HS: Programming Teacher</span>
+                    </div>
+                    <span className="text-gray-400">2022/23</span>
+                  </div>
+
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <span className="text-gray-800 mr-2">■</span>
+                      <span>"Vannplaning" App (IN2000, UiO)</span>
+                    </div>
+                    <span className="text-gray-400">2024</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* CONTACT Section */}
+              <div className="flex-1 md:pl-8">
+                <div className="flex items-start justify-between mb-2">
+                  <div className="flex items-center">
+                    <span className="text-gray-800 mr-2">■</span>
+                    <span className="text-gray-800">[CONTACT]</span>
+                  </div>
+                  <div className="text-gray-400">[3]</div>
+                </div>
+
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <span className="text-gray-400 mr-2">¹</span>
+                      <a
+                        href="mailto:your.email@example.com"
+                        className="hover:underline"
+                      >
+                        Email
+                      </a>
+                    </div>
+                    <span className="text-gray-400">↗</span>
+                  </div>
+
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <span className="text-gray-400 mr-2">²</span>
+                      <a
+                        href="https://linkedin.com/in/yourprofile"
+                        className="hover:underline"
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
+                    <span className="text-gray-400">↗</span>
+                  </div>
+
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <span className="text-gray-400 mr-2">³</span>
+                      <a
+                        href="https://github.com/harepus"
+                        className="hover:underline"
+                      >
+                        GitHub
+                      </a>
+                    </div>
+                    <span className="text-gray-400">↗</span>
+                  </div>
+
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <span className="text-gray-400 mr-2">⁴</span>
+                      <a href="/resume.pdf" className="hover:underline">
+                        resume.pdf
+                      </a>
+                    </div>
+                    <span className="text-gray-400">↗</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Sentrert loddrett separator-linje */}
-          <div className="w-px bg-gray-300 h-16 mx-auto"></div>
-
-          {/* Contact Section */}
-          <div>
-            <h2 className="text-xs tracking-wide text-gray-500 uppercase mb-4">
-              CONTACT [2]
-            </h2>
-            <div className="space-y-1">
-              <p>
-                <span className="text-gray-400">[1]</span>
-                <a
-                  href="mailto:your.email@example.com"
-                  className="hover:underline"
-                >
-                  {" "}
-                  Email ↗
-                </a>
-              </p>
-              <p>
-                <span className="text-gray-400">[2]</span>
-                <a
-                  href="https://linkedin.com/in/yourprofile"
-                  className="hover:underline"
-                >
-                  {" "}
-                  LinkedIn ↗
-                </a>
-              </p>
-              <p>
-                <span className="text-gray-400">[3]</span>
-                <a
-                  href="https://github.com/yourprofile"
-                  className="hover:underline"
-                >
-                  {" "}
-                  GitHub ↗
-                </a>
-              </p>
-              <p>
-                <span className="text-gray-400">[4]</span>
-                <a href="/resume.pdf" className="hover:underline">
-                  {" "}
-                  resume.pdf ↗
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <p className="mt-6 text-xs text-gray-500 text-left">
-          New portfolio coming soon.
-        </p>
+        </main>
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default Portfolio;

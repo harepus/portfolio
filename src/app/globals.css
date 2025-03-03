@@ -23,18 +23,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --backgroundLight: #fafafa;
-  --backgroundDark: #000000;
-  --textLight: #1a1a1a;
-  --textDark: #eaeaea;
-  --cardLight: #ffffff;
-  --cardDark: #1c1c1e;
-  --borderLight: #dddddd;
-  --borderDark: #333333;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: judson, serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Force centering override */
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }

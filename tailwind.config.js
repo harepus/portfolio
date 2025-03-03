@@ -1,26 +1,28 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       colors: {
-        background: {
-          light: "#FAFAFA",
-          dark: "#000000",
+        black: "#000000",
+        gray: {
+          400: "#787878",
         },
-        text: {
-          light: "#1A1A1A",
-          dark: "#EAEAEA",
+        red: {
+          500: "#e53e3e",
         },
-        card: {
-          light: "#FFFFFF",
-          dark: "#1C1C1E",
+        blue: {
+          500: "#3182ce",
         },
-        border: {
-          light: "#DDDDDD",
-          dark: "#333333",
-        },
+      },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
       },
     },
   },
