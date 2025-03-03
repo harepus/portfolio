@@ -16,7 +16,7 @@ const Portfolio: NextPage = () => {
         window.location.href =
           "https://www.linkedin.com/in/sebastian-hareide-569722208/";
       if (event.key === "3")
-        window.location.href = "https://github.com/yourprofile";
+        window.location.href = "https://github.com/harepus";
       if (event.key === "4") window.location.href = "/resume.pdf";
     };
 
@@ -55,8 +55,8 @@ const Portfolio: NextPage = () => {
                   consulting, and software engineering.
                 </p>
                 <p className="text-gray-600">
-                  Currently studying Mathematics at UiO. Finished a bachelor's
-                  in Informatics.
+                  Currently studying Mathematics at UiO. Holds a BSc degree in
+                  Informatics.
                 </p>
               </div>
             </div>
