@@ -55,7 +55,7 @@ const Portfolio: NextPage = () => {
                   consulting, and software engineering.
                 </p>
                 <p className="text-gray-600">
-                  Currently studying Mathematics at UiO. Holds a BSc degree in
+                  Currently studying Mathematics at UiO. Holds a B.Sc. degree in
                   Informatics.
                 </p>
               </div>
